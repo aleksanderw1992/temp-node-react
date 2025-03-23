@@ -1,4 +1,3 @@
-
 import { Icon } from "@chakra-ui/react";
 import { HiUsers } from "react-icons/hi";
 import {
@@ -6,7 +5,8 @@ import {
   MdHome,
   MdInsertChartOutlined,
   MdLeaderboard,
-  MdLock
+  MdLock,
+  MdCalendarToday
 } from "react-icons/md";
 // icon
 import React from "react";
@@ -31,6 +31,7 @@ import { BsBlockquoteRight } from "react-icons/bs";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { TbInvoice } from "react-icons/tb";
 import { TbFileInvoice } from "react-icons/tb";
+import Meetings from 'views/admin/meetings';
 // Admin Imports
 const MainDashboard = React.lazy(() => import("views/admin/default"));
 
@@ -313,17 +314,9 @@ const routes = [
   {
     name: "Meetings",
     layout: [ROLE_PATH.superAdmin, ROLE_PATH.user],
-    path: "/metting",
-    icon: <Icon as={SiGooglemeet} width='20px' height='20px' color='inherit' />,
-    component: Meeting,
-  },
-  {
-    name: "Meetings ",
-    layout: [ROLE_PATH.superAdmin, ROLE_PATH.user],
-    under: "Meetings",
-    parentName: "Meetings",
-    path: "/metting/:id",
-    component: MettingView,
+    path: "/meetings",
+    icon: <Icon as={MdCalendarToday} width='20px' height='20px' color='inherit' />,
+    component: Meetings,
   },
   // ------------- Phone Routes ------------------------
   {

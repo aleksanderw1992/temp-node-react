@@ -99,16 +99,15 @@ function SignIn() {
       image={image?.length > 0 && image[0]?.authImg}
     >
       <Flex
-        maxW={{ base: "100%", md: "max-content" }}
-        w="100%"
-        mx={{ base: "auto", lg: "0px" }}
+        w={["100%", "100%", "max-content"]}
+        mx="auto"
         me="auto"
         h="fit-content"
         alignItems="start"
         justifyContent="center"
-        mb={{ base: "30px", md: "60px" }}
-        px={{ base: "25px", md: "0px" }}
-        mt={{ base: "40px", md: "14vh" }}
+        mb={["30px", "30px", "60px"]}
+        px={["25px", "25px", "0px"]}
+        mt={["40px", "40px", "14vh"]}
         flexDirection="column"
       >
         <Box me="auto">
@@ -128,13 +127,13 @@ function SignIn() {
         <Flex
           zIndex="2"
           direction="column"
-          w={{ base: "100%", md: "420px" }}
+          w={["100%", "100%", "420px"]}
           maxW="100%"
           background="transparent"
           borderRadius="15px"
-          mx={{ base: "auto", lg: "unset" }}
+          mx={["auto", "auto", "unset"]}
           me="auto"
-          mb={{ base: "20px", md: "auto" }}
+          mb={["20px", "20px", "auto"]}
         >
           <form onSubmit={handleSubmit}>
             <FormControl isInvalid={errors.username && touched.username}>
@@ -154,7 +153,7 @@ function SignIn() {
                 onBlur={handleBlur}
                 value={values.username}
                 name="username"
-                ms={{ base: "0px", md: "0px" }}
+                ms={["0px", "0px", "0px"]}
                 type="email"
                 placeholder="mail@simmmple.com"
                 mb={errors.username && touched.username ? undefined : "24px"}
@@ -169,7 +168,6 @@ function SignIn() {
               />
               {errors.username && touched.username && (
                 <FormErrorMessage mb="24px">
-                  {" "}
                   {errors.username}
                 </FormErrorMessage>
               )}
@@ -219,7 +217,6 @@ function SignIn() {
               </InputGroup>
               {errors.password && touched.password && (
                 <FormErrorMessage mb="24px">
-                  {" "}
                   {errors.password}
                 </FormErrorMessage>
               )}

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middelwares/auth');
 
 const contactRoute = require('./contact/_routes')
 const propertyRoute = require('./property/_routes');

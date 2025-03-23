@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import 'assets/css/App.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -16,7 +16,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 function App() {
 	const token = localStorage.getItem("token") || sessionStorage.getItem("token");
-
 	const user = JSON.parse(localStorage.getItem("user"))
 	useNavigate()
 
@@ -39,19 +38,17 @@ function App() {
 }
 
 ReactDOM.render(
-	<Provider store={store}>
-		<PersistGate loading={null} persistor={persistor}>
-			<ChakraProvider theme={theme}>
-				<React.StrictMode>
-					<ThemeEditorProvider>
-						<Router>
-							<App />
-						</Router>
-					</ThemeEditorProvider>
-				</React.StrictMode>
-			</ChakraProvider>
-		</PersistGate>
-	</Provider>
-	, document.getElementById('root')
+	<React.StrictMode>
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				<ChakraProvider theme={theme}>
+					<Router>
+						<App />
+					</Router>
+				</ChakraProvider>
+			</PersistGate>
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 

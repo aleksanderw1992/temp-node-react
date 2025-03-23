@@ -21,6 +21,7 @@ import moduleSlice from './slices/moduleSlice';
 import accountSlice from './slices/accountSlice';
 import quotesSlice from './slices/quotesSlice';
 import invoicesSlice from './slices/invoicesSlice';
+import meetingReducer from './meetingSlice';
 
 const middleware = (getDefaultMiddleware) => {
   return getDefaultMiddleware({
@@ -71,6 +72,7 @@ export const store = configureStore({
     accountData: accountSlice,
     quotesData: quotesSlice,
     invoicesData: invoicesSlice,
+    meetings: meetingReducer,
   },
   middleware,
 });
